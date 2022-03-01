@@ -5,12 +5,20 @@ const  searchPhone = () =>{
    
     searchField.value ="";
 
+    
+    if(searchText == ''){
+        
+        alert("plese enter something");
+      }
+  
+else{ 
     const url =`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
     fetch(url) 
     .then(res => res.json())
     .then(data =>  displayResult(data.data)); 
 
+    }
 }
 
 
@@ -18,8 +26,20 @@ const  searchPhone = () =>{
     
 const displayResult = phones => {
     const searchResult = document.getElementById('displayResul');
-  
 
+    //for remove prevus result
+    searchResult.textContent='';
+
+
+     //jodi search kito foalfol api te na theke ;
+      if(phones.length == 0){
+
+        alert('this devise in not availabale for now ');
+
+      }
+
+      
+else{ 
     phones.slice(0,20).forEach( phone => {
         
         const div = document.createElement('div');
@@ -42,7 +62,23 @@ const displayResult = phones => {
      
    
     });
+}
+
 } 
+
+
+
+    
+const displayDetails = phoneDet=>{
+   
+
+    const url = `https://openapi.programming-hero.com/api/phone/${phoneDet}`
+       fetch(url)
+       .then(res => res.json())
+       .then(data => loadDetails(data.data));
+    
+    }
+    
 
 
 
