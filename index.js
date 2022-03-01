@@ -39,7 +39,67 @@ const displayResult = phones => {
         `
         searchResult.appendChild(div);
 
-     //  console.log(pnone);
+     
    
     });
 } 
+
+
+
+const loadDetails = phone =>{
+    
+  
+      const details =  document.getElementById('details');
+      
+      //for remove presuse details;
+      details.textContent = '';
+  
+     
+  
+      const div = document.createElement('div');
+      div.className=('card')
+  
+      div.innerHTML=`
+  
+      <img src="${phone.image}" class="card-img-top" alt="..."  width="600px"  height="500px">
+         
+      <div class="card-body">
+        <h5 class="card-title">${phone.releaseDate}</h5>
+        <p class="card-text">
+        Chipset: ${phone.mainFeatures.chipSet} 
+         Display: ${phone.mainFeatures.displaySize}
+         Memory: ${phone.mainFeatures.memory}
+          </p>
+  
+          <p class="card-text">
+           Bluthut: ${phone.others.Bluetooth}
+           NFC:  ${phone.others.NFC}
+          GPS:  ${phone.others.GPS}
+           Radio: ${phone.others.Radio}
+           USB: ${phone.others.USB}
+           WLAN: ${phone.others.WLAN}
+  
+  
+          </p>
+  
+        
+      </div>
+    
+      
+      `;
+  
+      details.appendChild(div);
+  
+  
+  
+  
+  }
+  
+  
+      
+  
+  
+      
+  
+  
+  
