@@ -30,6 +30,10 @@ const displayResult = phones => {
     //for remove prevus result
     searchResult.textContent='';
 
+    
+   
+   
+
 
      //jodi search kito foalfol api te na theke ;
       if(phones.length == 0){
